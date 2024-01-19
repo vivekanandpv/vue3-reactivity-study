@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 
+//  Better to declare the shape of the objects as interface
 export interface Person {
   firstName: string;
   lastName: string;
   email: string;
 }
 
-//  wrapper, type-safe (TS), only for simple types: number, string, boolean
+//  No wrapper, directly reactive, type-safe (TS)
+//  Doesn't work with primitives (number, string, boolean)
 const person = reactive<Person>({
   firstName: 'Harish',
   lastName: 'S',
   email: 'harish@gmail.com'
 });
 
+//  No unwrapping
 const changeFirstName = () => {
   person.firstName = 'Ramesh'
 }
