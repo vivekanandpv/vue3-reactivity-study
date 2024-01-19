@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-//  wrapper, type-safe (TS), recommended for simple types: number, string, boolean
+//  wrapper, type-safe (TS)
+//  recommended for simple types: number, string, boolean
+//  could also work with complex types
+//  auto type inference
 const counter = ref(0);
 
+//  But unwrapping by .value.x is required
 const increment = () => {
   counter.value++;
 }
