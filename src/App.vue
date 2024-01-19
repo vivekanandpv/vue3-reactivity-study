@@ -24,11 +24,11 @@ const decrement = () => {
     <!-- bind directly to the wrapper -->
     <p>Counter: {{ counter }}</p>
 
-    <button class="btn btn-primary me-2" @click="increment">increment</button>
-    <button class="btn btn-primary me-2" @click="decrement">Decrement</button>
+    <button class="btn btn-primary me-2" @click="increment">Increment (Setup)</button>
+    <button class="btn btn-primary me-2" @click="decrement">Decrement (Setup)</button>
 
     <!-- this too will work, but only in the template -->
-    <button class="btn btn-primary me-2" @click="counter--">Decrement</button>
+    <button class="btn btn-primary me-2" @click="counter--">Decrement (Template Direct)</button>
   </div>
 </template>
 
