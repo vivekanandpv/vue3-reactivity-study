@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-//  wrapper, type-safe (TS), only for simple types: number, string, boolean
+//  wrapper, type-safe (TS), recommended for simple types: number, string, boolean
 const counter = ref(0);
 
 const increment = () => {
