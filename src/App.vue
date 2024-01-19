@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
-//  wrapper, type-safe (TS), only for simple types: number, string, boolean
-const counter = ref(0);
-
-const increment = () => {
-  counter.value++;
+export interface Person {
+  firstName: string;
+  lastName: string;
 }
 
-const decrement = () => {
-  counter.value--;
+//  wrapper, type-safe (TS), can also be used for complex types
+//  but the unwrapping .value.x is required
+const person = ref<Person>({
+  firstName: 'Karan',
+  lastName: 'Kumar'
+});
+
+const changeFirstName = () => {
+  person.value.firstName = 'Tushar';
 }
 </script>
 
@@ -17,14 +21,8 @@ const decrement = () => {
   <div class="p-5">
     <h2>Vue 3 Reactivity API</h2>
     <hr>
-    <!-- bind directly to the wrapper -->
-    <p>Counter: {{ counter }}</p>
-
-    <button class="btn btn-primary me-2" @click="increment">increment</button>
-    <button class="btn btn-primary me-2" @click="decrement">Decrement</button>
-
-    <!-- this too will work, but only in the template -->
-    <button class="btn btn-primary me-2" @click="counter--">Decrement</button>
+    <p>{{ person.firstName }} {{ person.lastName }}</p>
+    <button class="btn btn-primary" @click="changeFirstName">Change First Name</button>
   </div>
 </template>
 
