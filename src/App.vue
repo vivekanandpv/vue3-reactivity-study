@@ -1,22 +1,32 @@
-<script setup lang="ts">
+<script lang="ts">
 import { reactive } from 'vue';
-
 export interface Person {
   firstName: string;
   lastName: string;
   email: string;
 }
 
-//  wrapper, type-safe (TS), only for simple types: number, string, boolean
-const person = reactive<Person>({
-  firstName: 'Harish',
-  lastName: 'S',
-  email: 'harish@gmail.com'
-});
+export default {
+  setup() {
+    //  wrapper, type-safe (TS), only for simple types: number, string, boolean
+    const person = reactive<Person>({
+      firstName: 'Harish',
+      lastName: 'S',
+      email: 'harish@gmail.com'
+    });
 
-const changeFirstName = () => {
-  person.firstName = 'Ramesh'
+    const changeFirstName = () => {
+      person.firstName = 'Ramesh'
+    }
+
+    return {
+      person,
+      changeFirstName
+    }
+  }
 }
+
+
 </script>
 
 <template>
