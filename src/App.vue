@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch, computed } from 'vue';
 
 //  wrapper, type-safe (TS)
 //  recommended for simple types: number, string, boolean
@@ -15,6 +15,14 @@ const increment = () => {
 const decrement = () => {
   counter.value--;
 }
+
+
+watch(counter, (next, previous) => {
+  console.log('Watching counter from', previous, 'to', next);
+});
+
+
+const doubleCounter = computed(() => counter.value * 2);
 </script>
 
 <template>
@@ -23,6 +31,7 @@ const decrement = () => {
     <hr>
     <!-- bind directly to the wrapper -->
     <p>Counter: {{ counter }}</p>
+    <p>Double Counter: {{ doubleCounter }}</p>
 
     <button class="btn btn-primary me-2" @click="increment">Increment (Setup)</button>
     <button class="btn btn-primary me-2" @click="decrement">Decrement (Setup)</button>
