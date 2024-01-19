@@ -1,4 +1,5 @@
 <script lang="ts">
+//  Not a setup component
 import { reactive } from 'vue';
 export interface Person {
   firstName: string;
@@ -6,9 +7,10 @@ export interface Person {
   email: string;
 }
 
+//  this is composition API
 export default {
+  //  setup() is available from Vue 3 onwards
   setup() {
-    //  wrapper, type-safe (TS), only for simple types: number, string, boolean
     const person = reactive<Person>({
       firstName: 'Harish',
       lastName: 'S',
@@ -19,6 +21,7 @@ export default {
       person.firstName = 'Ramesh'
     }
 
+    //  Return an object with the properties (data and functions) that are exposed
     return {
       person,
       changeFirstName
