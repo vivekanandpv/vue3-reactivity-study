@@ -37,14 +37,14 @@ export default {
     <!-- bind directly to the wrapper -->
     <p>Counter: {{ counter }}</p>
 
-    <button class="btn btn-primary me-2" @click="increment">Increment (Setup Export)</button>
-    <button class="btn btn-primary me-2" @click="decrement">Decrement (Setup Export)</button>
+    <button class="btn btn-primary me-2" @click="increment">Increment (Composition API)</button>
+    <button class="btn btn-primary me-2" @click="decrement">Decrement (Composition API)</button>
 
     <!-- this too will work, but only in the template -->
-    <button class="btn btn-primary me-2" @click="counter--">Decrement (Direct Template)</button>
+    <button class="btn btn-primary me-2" @click="counter--">Decrement (Composition API Direct Template)</button>
 
     <!-- composition api way of handling events -->
-    <button class="btn btn-primary me-2" @click="secondaryIncrement">Increment (Composition API)</button>
+    <button class="btn btn-primary me-2" @click="secondaryIncrement">Increment (Options API)</button>
   </div>
 </template>
 
